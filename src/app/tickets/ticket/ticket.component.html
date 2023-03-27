@@ -4,5 +4,26 @@
   <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
   <i class="far fa-user"></i> {{ticket.student}} 
   <br/>
-  <div style="margin-top: 20px;"> {{ticket.major}} </div>
+  <div style="margin-top: 20px;">
+    
+    <div *ngIf="ticket.major === 'SI'; else elseBlock1">
+      <i class="fa fa-briefcase" aria-hidden="true"></i> {{ticket.major}}
+    </div>
+    
+    <ng-template #elseBlock1>
+      <div *ngIf="ticket.major === 'GE'; else elseBlock2">
+        <i class="fa fa-book" aria-hidden="true"></i> {{ticket.major}}
+      </div>
+    
+      <ng-template #elseBlock2>
+        <div *ngIf="ticket.major === 'GB'">
+          <i class="fa fa-camera-retro" aria-hidden="true"></i> {{ticket.major}}
+        </div>
+    
+        <div *ngIf="!(ticket.major === 'GB')">
+          <i class="fa fa-times" aria-hidden="true"></i> {{ticket.major}}
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
 </div>

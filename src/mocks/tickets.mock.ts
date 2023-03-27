@@ -15,6 +15,20 @@ export const TICKETS_MOCKED: Ticket[] = [
     description: 'Description du voyage',
     date: dateToday,
     student: 'Anakin', 
-    major: 'SI'
+    major: 'GE'
+  },
+  {
+    title: '5 in Kinshasa',
+    description: 'Description du voyage',
+    date: dateToday,
+    student: 'Likan', 
+    major: 'GB'
+  },
+  {
+    title: '5 in London',
+    description: 'Description du voyage',
+    date: dateToday,
+    student: 'Wan', 
+    major: 'GG'
   },
 ];
