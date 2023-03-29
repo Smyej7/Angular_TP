@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketService } from '../../../services/ticket/ticket.service';
 import { Ticket } from '../../../models/ticket';
+import { StudentService } from 'src/services/student/student.service';
 
 @Component({
   selector: 'app-ticket-list',

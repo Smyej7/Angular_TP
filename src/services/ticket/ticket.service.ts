@@ -31,7 +31,7 @@ export class TicketService {
   }
 
   deleteTicket(ticket: Ticket) {
-    var index = this.ticketList.indexOf(ticket);
+    const index = this.ticketList.indexOf(ticket);
     if (index != -1) {
       this.ticketList.splice(index, 1);
       this.tickets$.next(this.ticketList);
