@@ -4,6 +4,7 @@ export interface Ticket {
   date?: Date;
   student?: string;
   major?: Major;
+  archived: boolean;
 }
 
 export enum Major {

@@ -4,31 +4,35 @@ const dateToday: Date = new Date();
 
 export const TICKETS_MOCKED: Ticket[] = [
   {
-    title: '4 in Fes',
+    title: '1 in Fes',
     description: '',
     date: dateToday,
     student: 'Paul', 
-    major: Major.SI
+    major: Major.SI, 
+    archived: true
   },
   {
-    title: '5 in Paris',
+    title: '2 in Paris',
     description: 'Description du voyage',
     date: dateToday,
     student: 'Anakin', 
-    major: Major.GE
+    major: Major.GE, 
+    archived: true
   },
   {
-    title: '5 in Kinshasa',
+    title: '3 in Kinshasa',
     description: 'Description du voyage',
     date: dateToday,
     student: 'Likan', 
-    major: Major.GB
+    major: Major.GB, 
+    archived: false
   },
   {
-    title: '5 in London',
+    title: '4 in London',
     description: 'Description du voyage',
     date: dateToday,
     student: 'Wan', 
-    major: Major.GE
+    major: Major.GE, 
+    archived: false
   },
 ];

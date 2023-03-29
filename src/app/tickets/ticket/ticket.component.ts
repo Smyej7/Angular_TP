@@ -19,6 +19,7 @@ export class TicketComponent implements OnInit {
   ticketHasBeenSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Output() notifyDelete = new EventEmitter();
+  @Output() notifyArchiveStateChanged = new EventEmitter();
 
   constructor() {
   }
@@ -32,5 +33,10 @@ export class TicketComponent implements OnInit {
 
   deleteTicket() {
     this.notifyDelete.emit(this.ticket);
+  }
+
+  changeArchiveStateTicket() {
+    this.ticket.archived = !this.ticket.archived
+    //this.notifyArchiveStateChanged.emit();
   }
 }
