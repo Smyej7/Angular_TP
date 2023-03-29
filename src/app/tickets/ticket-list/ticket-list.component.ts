@@ -22,4 +22,7 @@ export class TicketListComponent implements OnInit {
     console.log('event received from child:', hasBeenSelected);
   }
 
+  deleteTicket(ticket: Ticket) {
+    this.ticketService.deleteTicket(ticket);
+  }
 }

@@ -14,6 +14,16 @@
     Major <br>
     <input class="input-custom" type="text" id="major" [formControlName]="'major'">
   </label>
+  <!--
+    <label for="major">major :</label>
+    <br>
+    <select name="major" id="major" [formControlName]="'major'">
+      <option value="">Please choose an option</option>
+      <option value="SI">SI</option>
+      <option value="GE">GE</option>
+      <option value="GB">GB</option>
+  </select>
+  -->
   <br>
   <button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
 </form>
