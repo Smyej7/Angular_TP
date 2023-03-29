@@ -10,10 +10,12 @@
     <input class="input-custom" type="text" id="description" [formControlName]="'description'">
   </label>
   <br>
-  <label for="major">
-    Major <br>
-    <input class="input-custom" type="text" id="major" [formControlName]="'major'">
-  </label>
+
+  <label for="major">major :</label>
+  <br>
+    <select name="major" id="major" [formControlName]="'major'">
+      <option *ngFor="let item of MAJORS_LIST" [value]="item">{{ item }}</option>
+  </select>
   <!--
     <label for="major">major :</label>
     <br>
