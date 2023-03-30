@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from 'rxjs/index';
+import { Observable, of } from "rxjs";
 
 import { STUDENTS_MOCKED } from "src/mocks/students.mock";
 import { Student } from "src/models/student";
@@ -8,10 +8,9 @@ import { Student } from "src/models/student";
   providedIn: 'root'
 })
 export class StudentService {
-    
-  private studentList: Student[] = STUDENTS_MOCKED;
-  public students$: BehaviorSubject<Student[]> = new BehaviorSubject(this.studentList);
 
-  constructor() {
+  getStudents(): Observable<Student[]> {
+    const students = of(STUDENTS_MOCKED);
+    return students;
   }
 }
