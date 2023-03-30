@@ -7,16 +7,13 @@ import { Ticket } from '../../../models/ticket';
   templateUrl: './ticket-list.component.html',
   styleUrls: ['./ticket-list.component.scss']
 })
-export class TicketListComponent implements OnInit {
+export class TicketListComponent {
 
   public ticketList: Ticket[] = [];
   public displayTicketArchived: boolean = false;
 
   constructor(public ticketService: TicketService) {
     this.ticketService.tickets$.subscribe((tickets) => this.ticketList = tickets);
-  }
-
-  ngOnInit() {
   }
 
   toggleDisplayTicketArchived() {

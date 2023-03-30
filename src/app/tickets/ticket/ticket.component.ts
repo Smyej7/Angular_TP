@@ -6,7 +6,7 @@ import { Ticket } from '../../../models/ticket';
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.scss']
 })
-export class TicketComponent implements OnInit {
+export class TicketComponent {
 
   /**
    * Inputs & Output allow communication between parent & child components.
@@ -14,18 +14,6 @@ export class TicketComponent implements OnInit {
    */
   @Input()
   ticket: Ticket;
-
-  @Output() notifyDelete = new EventEmitter();
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-  deleteTicket() {
-    this.notifyDelete.emit(this.ticket);
-  }
 
   changeArchiveStateTicket() {
     this.ticket.archived = !this.ticket.archived;

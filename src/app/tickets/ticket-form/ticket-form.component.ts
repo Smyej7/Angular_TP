@@ -9,7 +9,7 @@ import { STUDENTS_MOCKED } from 'src/mocks/students.mock';
   templateUrl: './ticket-form.component.html',
   styleUrls: ['./ticket-form.component.scss']
 })
-export class TicketFormComponent implements OnInit {
+export class TicketFormComponent {
 
   // Note: We are using here ReactiveForms to create our form. Be careful when you look for some documentation to
   // avoid TemplateDrivenForm (another type of form)
@@ -33,9 +33,6 @@ export class TicketFormComponent implements OnInit {
     // You can also add validators to your inputs such as required, maxlength or even create your own validator!
     // More information: https://angular.io/guide/reactive-forms#simple-form-validation
     // Advanced validation: https://angular.io/guide/form-validation#reactive-form-validation
-  }
-
-  ngOnInit() {
   }
 
   addTicket() {
