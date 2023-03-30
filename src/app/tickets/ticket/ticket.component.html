@@ -1,4 +1,4 @@
-<div class="card ticket" (click)="selectTicket()">
+<div class="card ticket">
   <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
   <button style="margin-left: 70%;" (click)="changeArchiveStateTicket()">
     <span *ngIf="ticket.archived; else elseBlock">

@@ -15,11 +15,7 @@ export class TicketComponent implements OnInit {
   @Input()
   ticket: Ticket;
 
-  @Output()
-  ticketHasBeenSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   @Output() notifyDelete = new EventEmitter();
-  @Output() notifyArchiveStateChanged = new EventEmitter();
 
   constructor() {
   }
@@ -27,16 +23,11 @@ export class TicketComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectTicket() {
-    this.ticketHasBeenSelected.emit(true);
-  }
-
   deleteTicket() {
     this.notifyDelete.emit(this.ticket);
   }
 
   changeArchiveStateTicket() {
-    this.ticket.archived = !this.ticket.archived
-    //this.notifyArchiveStateChanged.emit();
+    this.ticket.archived = !this.ticket.archived;
   }
 }

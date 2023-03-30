@@ -41,8 +41,8 @@ export class TicketFormComponent implements OnInit {
   addTicket() {
     const ticketToCreate: Ticket = this.ticketForm.getRawValue() as Ticket;
     ticketToCreate.date = new Date();
-    const id = this.ticketForm.value.studentId;
-    ticketToCreate.student = STUDENTS_MOCKED.find((s) => s.id == id);
+    const studentId = this.ticketForm.value.studentId;
+    ticketToCreate.student = STUDENTS_MOCKED.find((s) => s.id == studentId);
     this.ticketService.addTicket(ticketToCreate);
   }
 

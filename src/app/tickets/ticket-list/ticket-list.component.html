@@ -11,10 +11,7 @@
       <!--Inputs & Output allow communication between parent & child components.-->
       <!--More information: https://angular.io/guide/component-interaction-->
       <span *ngIf="ticket.archived == displayTicketArchived">
-        <app-ticket 
-        [ticket]="ticket" 
-        (ticketHasBeenSelected)="ticketHasBeenSelected($event)"
-        (notifyDelete)="deleteTicket($event)"></app-ticket>
+        <app-ticket [ticket]="ticket"></app-ticket>
       </span>
   </div>
 </div>

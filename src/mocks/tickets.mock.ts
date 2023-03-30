@@ -1,9 +1,7 @@
-import { Student } from 'src/models/student';
 import { Major, Ticket } from '../models/ticket';
 import { STUDENTS_MOCKED } from './students.mock';
 
 const dateToday: Date = new Date();
-const students = STUDENTS_MOCKED;
 
 export const TICKETS_MOCKED: Ticket[] = [
   {

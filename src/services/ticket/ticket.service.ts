@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/index';
+
 import { Ticket } from '../../models/ticket';
 import { TICKETS_MOCKED } from '../../mocks/tickets.mock';
-import { BehaviorSubject } from 'rxjs/index';
 
 @Injectable({
   providedIn: 'root'
