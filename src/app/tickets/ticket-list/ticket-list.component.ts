@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TicketService } from '../../../services/ticket/ticket.service';
 import { Ticket } from '../../../models/ticket';
 
@@ -9,6 +9,7 @@ import { Ticket } from '../../../models/ticket';
 })
 export class TicketListComponent implements OnInit {
 
+  @Input()
   public ticketList: Ticket[] = [];
   public displayTicketArchived: boolean = false;
 

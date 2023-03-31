@@ -1,22 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs/index';
+import { Observable } from 'rxjs/index';
 
 import { Ticket } from '../../models/ticket';
-import { TICKETS_MOCKED } from '../../mocks/tickets.mock';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
 
-  private tickets: Ticket[] = TICKETS_MOCKED;
+  private ticketsUrl = 'api/tickets';
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  constructor(private http: HttpClient) {}
 
   getTickets(): Observable<Ticket[]> {
-    const heroes = of(this.tickets);
-    return heroes;
+    return this.http.get<Ticket[]>(this.ticketsUrl);
   }
 
-  addTicket(ticket: Ticket) {
-    this.tickets.push(ticket);
+  /** POST: add a new hero to the server */
+  addTicket(ticket: Ticket): Observable<Ticket> {
+    console.log(`addTicket : ${ticket}`);
+    return this.http.post<Ticket>(this.ticketsUrl, ticket, this.httpOptions);
   }
 }
