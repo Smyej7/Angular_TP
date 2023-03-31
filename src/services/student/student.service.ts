@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 
 import { Student } from "src/models/student";
 
@@ -24,5 +24,10 @@ export class StudentService {
 
   addStudent(student: Student): Observable<Student> {
     return this.http.post<Student>(this.studentsUrl, student, this.httpOptions);
+  }
+
+  deleteStudent(id: number): Observable<Student> {
+    const url = `${this.studentsUrl}/${id}`;
+    return this.http.delete<Student>(url, this.httpOptions);
   }
 }

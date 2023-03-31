@@ -1,5 +1,5 @@
 <div class="ticket-list">
   <div class="ticket" *ngFor="let student of studentList">
-    <app-student [student]="student"></app-student>
+    <app-student [student]="student" (notifyDelete)="deleteStudent($event)"></app-student>
   </div>
 </div>

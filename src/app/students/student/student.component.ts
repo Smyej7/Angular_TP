@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Student } from 'src/models/student';
 
 @Component({
@@ -11,4 +11,10 @@ export class StudentComponent {
   @Input()
   student: Student;
 
+  @Output()
+  notifyDelete: EventEmitter<Student> = new EventEmitter<Student>();
+
+  deleteStudentClicked() {
+    this.notifyDelete.emit(this.student);
+  }
 }

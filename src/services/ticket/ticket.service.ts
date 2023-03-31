@@ -4,6 +4,10 @@ import { Observable } from 'rxjs/index';
 import { Ticket } from '../../models/ticket';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { mergeMap, filter, toArray } from 'rxjs/operators';
+import { from } from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,4 +29,10 @@ export class TicketService {
   addTicket(ticket: Ticket): Observable<Ticket> {
     return this.http.post<Ticket>(this.ticketsUrl, ticket, this.httpOptions);
   }
+
+  deleteTicket(id: number): Observable<Ticket> {
+    const url = `${this.ticketsUrl}/${id}`;
+    return this.http.delete<Ticket>(url, this.httpOptions);
+  }
+  
 }

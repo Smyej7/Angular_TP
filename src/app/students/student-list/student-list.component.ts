@@ -22,4 +22,10 @@ export class StudentListComponent implements OnInit {
     this.studentService.getStudents()
     .subscribe((students) => this.studentList = students);
   }
+
+  deleteStudent(student: Student) {
+    this.studentList = this.studentList.filter(s => s !== student);
+    this.studentService.deleteStudent(student.id)
+    .subscribe(() => this.getStudents());
+  }
 }
