@@ -3,11 +3,11 @@ import { Ticket } from 'src/models/ticket';
 import { TicketService } from 'src/services/ticket/ticket.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-ticket-section',
+  templateUrl: './ticket-section.component.html',
+  styleUrls: ['./ticket-section.component.css']
 })
-export class HomeComponent {
+export class TicketSectionComponent {
 
   tickets: Ticket[];
 

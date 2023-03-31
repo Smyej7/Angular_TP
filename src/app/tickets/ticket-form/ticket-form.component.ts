@@ -25,7 +25,7 @@ export class TicketFormComponent implements OnInit {
       description: [''],
       major: [Major.SI],
       archived: false, 
-      studentId: this.STUDENTS_LIST.length > 0 ? this.STUDENTS_LIST[0].id : ['']
+      studentId: ['']
     });
   }
 

@@ -22,13 +22,15 @@ export class InMemoryDataService implements InMemoryDbService {
     return data;
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
+  // Overrides the genId method to ensure that a ticket or a student always has an id.
+  // If the array is empty,
   // the method below returns the initial number (11).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
-  genId(tickets: Ticket[]): number {
-    return tickets.length > 0 ? Math.max(...tickets.map(ticket => ticket.id)) + 1 : 11;
+  // if the array is not empty, the method below returns the highest
+  // id + 1.
+  genId(items: (Ticket | Student)[]): number {
+    return items.length > 0 ? Math.max(...items.map((item) => item.id)) + 1 : 11;
   }
+  
+  
   
 }

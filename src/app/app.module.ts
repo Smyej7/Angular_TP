@@ -10,9 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '../services/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
+import { TicketSectionComponent } from './tickets/ticket-section/ticket-section.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { StudentComponent } from './students/student/student.component';
+import { StudentFormComponent } from './students/student-form/student-form.component';
+import { StudentSectionComponent } from './students/student-section/student-section.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,11 @@ import { StudentComponent } from './students/student/student.component';
     TicketFormComponent,
     TicketListComponent,
     HeaderComponent,
-    HomeComponent,
+    TicketSectionComponent,
     StudentListComponent,
-    StudentComponent
+    StudentComponent,
+    StudentFormComponent,
+    StudentSectionComponent
   ],
   imports: [
     BrowserModule,

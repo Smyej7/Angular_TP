@@ -21,7 +21,7 @@ export class TicketService {
     return this.http.get<Ticket[]>(this.ticketsUrl);
   }
 
-  /** POST: add a new hero to the server */
+  /** POST: add a new ticket to the server */
   addTicket(ticket: Ticket): Observable<Ticket> {
     return this.http.post<Ticket>(this.ticketsUrl, ticket, this.httpOptions);
   }

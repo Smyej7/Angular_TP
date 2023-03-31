@@ -1,0 +1,5 @@
+<nav>
+  <a routerLink="/list-students">List Students</a>
+</nav>
+<app-student-form (studentHasBeenAdded)="studentHasBeenAdded()"></app-student-form>
+<app-student-list [studentList]="students"></app-student-list>
