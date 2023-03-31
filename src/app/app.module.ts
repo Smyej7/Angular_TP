@@ -11,6 +11,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '../services/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
+import { StudentComponent } from './students/student/student.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HomeComponent } from './home/home.component';
     TicketFormComponent,
     TicketListComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    StudentListComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,

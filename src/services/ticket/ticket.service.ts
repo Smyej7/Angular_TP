@@ -23,7 +23,6 @@ export class TicketService {
 
   /** POST: add a new hero to the server */
   addTicket(ticket: Ticket): Observable<Ticket> {
-    console.log(`addTicket : ${ticket}`);
     return this.http.post<Ticket>(this.ticketsUrl, ticket, this.httpOptions);
   }
 }
