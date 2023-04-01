@@ -1,4 +1,5 @@
 <div>
-  <i class="far fa-user"></i> {{student.id}} - {{student.firstname}} {{student.lastname}} &nbsp;
+  <i class="far fa-user"></i>
+  <a routerLink="/student/{{student.id}}"> {{student.id}} - {{student.firstname}} {{student.lastname}} </a>
   <button type="button" (click)="deleteStudentClicked(student)">x</button>
 </div>

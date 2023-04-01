@@ -4,12 +4,15 @@ import { TicketSectionComponent } from './tickets/ticket-section/ticket-section.
 import { TicketListComponent } from './tickets';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { StudentSectionComponent } from './students/student-section/student-section.component';
+import { StudentDetailComponent } from './students/student-detail/student-detail.component';
 
 const routes: Routes = [
   { path: 'manage-tickets', component: TicketSectionComponent },
+  { path: 'list-tickets', component: TicketListComponent },
+
   { path: 'manage-students', component: StudentSectionComponent },
-  { path: 'list-tickets', component: TicketListComponent }, 
-  { path: 'list-students', component: StudentListComponent }
+  { path: 'list-students', component: StudentListComponent },
+  { path: 'student/:id', component: StudentDetailComponent },
 ];
 
 @NgModule({

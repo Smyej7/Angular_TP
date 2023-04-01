@@ -15,6 +15,9 @@ import { StudentListComponent } from './students/student-list/student-list.compo
 import { StudentComponent } from './students/student/student.component';
 import { StudentFormComponent } from './students/student-form/student-form.component';
 import { StudentSectionComponent } from './students/student-section/student-section.component';
+import { StudentDetailComponent } from './students/student-detail/student-detail.component';
+
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { StudentSectionComponent } from './students/student-section/student-sect
     StudentListComponent,
     StudentComponent,
     StudentFormComponent,
-    StudentSectionComponent
+    StudentSectionComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { StudentSectionComponent } from './students/student-section/student-sect
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   providers: [
   ],
