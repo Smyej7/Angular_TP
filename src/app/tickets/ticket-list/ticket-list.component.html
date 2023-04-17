@@ -8,9 +8,29 @@
       Show archived tickets
     </ng-template>
   </button> -->
-  <div *ngFor="let ticket of ticketList">
+  <div *ngFor="let ticket of ticketList"  style="margin-right: 300px;">
       <span *ngIf="ticket.archived == displayTicketArchived" >
         <app-ticket [ticket]="ticket"></app-ticket>
       </span>
   </div>
+  <!-- <div class="content">
+    <div fxLayout="row wrap">
+      <div fxFlex="25%" *ngFor="let num of [1,2,3,4,5,6,7]">
+        <mat-card class="mat-elevation-z4" >
+          <mat-card-header>
+            <mat-card-title>Mountains {{num}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              The Himalayas is a mountain range in Asia.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    </div> -->
 </div>

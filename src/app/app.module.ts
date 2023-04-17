@@ -27,7 +27,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
-import { TableBasicComponent } from './table-basic/table-basic.component';
+import {TableBasicComponent} from './table-basic/table-basic.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { TableBasicComponent } from './table-basic/table-basic.component';
     MatButtonModule,
     MatSelectModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers: [
   ],

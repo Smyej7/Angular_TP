@@ -1,7 +1,6 @@
-<div *ngIf="student">
-  <a routerLink="/student/19"> nsiri </a>
+<!-- <div *ngIf="student">
   <h2>{{firstname}} {{lastname}} Details</h2>
-  <div><span>id: </span>{{student.id}}</div>
+  <div style="display: none;"><span>id: </span>{{student.id}}</div>
   <div>
     <label for="student-firstname">Student firstname: </label>
     <input id="student-firstname" [(ngModel)]="student.firstname" placeholder="firstname">
@@ -15,5 +14,44 @@
   </div>
 
 </div>
-<button type="button" (click)="save()">save</button>
-<button type="button" (click)="goBack()">go back</button>
+<button mat-button type="button" (click)="save()">save</button>
+<button mat-button type="button" (click)="goBack()">go back</button> -->
+
+<!-- <form class="form">
+  <h2>{{firstname}} {{lastname}} Details</h2>
+  <mat-form-field>
+    <mat-label for="student-firstname">Firstname</mat-label>
+    <input matInput [(ngModel)]="student.firstname" placeholder="firstname" id="student-firstname">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label for="student-lastname">Lastname</mat-label>
+    <input matInput [(ngModel)]="student.firstname" placeholder="lastname"  id="student-lastname" [formControlName]="'lastname'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Team</mat-label>
+    <mat-select [formControlName]="'img'">
+      <mat-option *ngFor="let team of teams" [value]="team">
+        <img mat-card-avatar src="assets/images/{{team}}.png" alt="Avatar" style="height: 30px; padding-top: 20px;">
+        <span style="padding-left: 40px;">{{team}}</span>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" class="btn-custom" (click)="save()">save</button>
+  <button mat-raised-button type="submit" class="btn-custom" (click)="goBack()">go back</button>
+</form> -->
+<form class="form">
+  <h2>{{student.firstname}} {{student.lastname}} Details</h2>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Firstname</mat-label>
+      <input matInput placeholder="firstname" [(ngModel)]="student.firstname" >
+    </mat-form-field>
+  </p>
+
+  <button mat-raised-button type="submit" class="btn-custom" (click)="save()">save</button>
+  <button mat-raised-button type="submit" class="btn-custom" (click)="goBack()">go back</button>
+</form>
