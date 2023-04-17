@@ -1,5 +1,8 @@
-<nav>
-    <a routerLink="/list-tickets">List Tickets</a>
-</nav>
-<app-ticket-form (ticketHasBeenAdded)="ticketHasBeenAdded()"></app-ticket-form>
-<app-ticket-list [ticketList]="tickets"></app-ticket-list>
+<div class="container">
+  <div class="left-element">
+    <app-ticket-form (ticketHasBeenAdded)="ticketHasBeenAdded()"></app-ticket-form>
+  </div>
+  <div class="right-element">
+    <app-ticket-list [ticketList]="tickets"></app-ticket-list>
+  </div>
+</div>  

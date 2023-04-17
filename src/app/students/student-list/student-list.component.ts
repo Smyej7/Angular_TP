@@ -8,7 +8,8 @@ import { StudentService } from 'src/services/student/student.service';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-
+  displayedColumns: string[] = ['image', 'firstname', 'lastname'];
+  
   @Input()
   public studentList: Student[] = [];
 

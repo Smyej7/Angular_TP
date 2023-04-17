@@ -1,9 +1,17 @@
-@import '../../../styles/card.scss';
+// @import '../../../styles/card.scss';
 
-.ticket {
-  width: 100%;
+// .ticket {
+//   width: 100%;
+// }
+
+// .ticket:hover {
+//   cursor: pointer;
+// }
+.example-card {
+  max-width: 400px;
 }
 
-.ticket:hover {
-  cursor: pointer;
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }

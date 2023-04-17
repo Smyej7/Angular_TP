@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.left-element .right-element {
+  flex: 1;
+  height: 50px;
+}
+
+.left-element {
+  margin-right: 100px;
+}
+
+.right-element {
+  margin-left: 100px;
+}

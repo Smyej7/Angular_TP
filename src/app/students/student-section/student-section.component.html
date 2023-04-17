@@ -1,5 +1,8 @@
-<nav>
-  <a routerLink="/list-students">List Students</a>
-</nav>
-<app-student-form (studentHasBeenAdded)="studentHasBeenAdded()"></app-student-form>
-<app-student-list [studentList]="students"></app-student-list>
+<div class="container">
+  <div class="left-element">
+    <app-student-form (studentHasBeenAdded)="studentHasBeenAdded()"></app-student-form>
+  </div>
+  <div class="right-element">
+    <app-student-list [studentList]="students"></app-student-list>
+  </div>
+</div>  

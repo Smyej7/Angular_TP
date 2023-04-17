@@ -1,16 +1,15 @@
 <div class="ticket-list">
-    <button type="button" (click)="toggleDisplayTicketArchived()">
+  <mat-slide-toggle [(ngModel)]="displayTicketArchived">Show Archived Tickets</mat-slide-toggle>
+  <!-- <button type="button" (click)="toggleDisplayTicketArchived()">
     <span *ngIf="displayTicketArchived; else elseBlock">
       Hide archived tickets
     </span>
     <ng-template #elseBlock>
       Show archived tickets
     </ng-template>
-  </button>
-  <div class="ticket" *ngFor="let ticket of ticketList">
-      <!--Inputs & Output allow communication between parent & child components.-->
-      <!--More information: https://angular.io/guide/component-interaction-->
-      <span *ngIf="ticket.archived == displayTicketArchived">
+  </button> -->
+  <div *ngFor="let ticket of ticketList">
+      <span *ngIf="ticket.archived == displayTicketArchived" >
         <app-ticket [ticket]="ticket"></app-ticket>
       </span>
   </div>

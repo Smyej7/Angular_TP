@@ -8,28 +8,23 @@ import { Student } from 'src/models/student';
 @Component({
   selector: 'app-ticket-form',
   templateUrl: './ticket-form.component.html',
-  styleUrls: ['./ticket-form.component.scss']
+  styleUrls: ['./ticket-form.component.css']
 })
 export class TicketFormComponent implements OnInit {
 
   public ticketForm: FormGroup;
   public MAJORS_LIST = Object.values(Major);
   public STUDENTS_LIST: Student[] = [];
+  public foods = ['pizza', 'kebab']
 
   @Output()
   ticketHasBeenAdded = new EventEmitter();
 
   constructor(public formBuilder: FormBuilder, public ticketService: TicketService, public studentService: StudentService) {
-    this.ticketForm = this.formBuilder.group({
-      title: [''],
-      description: [''],
-      major: [Major.SI],
-      archived: false, 
-      studentId: ['']
-    });
   }
 
   ngOnInit(): void {
+    this.clearForm();
     this.getStudents();
   }
 
@@ -45,6 +40,17 @@ export class TicketFormComponent implements OnInit {
     ticketToCreate.student = this.STUDENTS_LIST.find((s) => s.id == studentId);
     this.ticketService.addTicket(ticketToCreate)
     .subscribe(() => this.ticketHasBeenAdded.emit());
+    this.clearForm();
+  }
+
+  clearForm() {
+    this.ticketForm = this.formBuilder.group({
+      title: [''],
+      description: [''],
+      major: [Major.SI],
+      archived: false, 
+      studentId: ['']
+    });
   }
 
 }

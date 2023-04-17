@@ -17,8 +17,8 @@ export class StudentFormComponent {
 
   constructor(public formBuilder: FormBuilder, public studentService: StudentService) {
     this.studentForm = this.formBuilder.group({
-      firstname: [''], 
-      lastname: ['']
+      firstname: '', 
+      lastname: ''
     });
   }
 

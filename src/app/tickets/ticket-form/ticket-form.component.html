@@ -1,32 +1,49 @@
-<h3>Create a new ticket</h3>
-<form class="ticket-form" [formGroup]="ticketForm">
-  <label for="title">
-    Title <br>
-    <input class="input-custom" type="text" id="title" [formControlName]="'title'">
-  </label>
-  <br>
-  <label for="description">
-    Description <br>
-    <input class="input-custom" type="text" id="description" [formControlName]="'description'">
-  </label>
-  <br>
-  <label for="major">
-    Major <br>
-  </label>
-    <select name="major-field" id="major" [formControlName]="'major'">
-      <option *ngFor="let item of MAJORS_LIST" [value]="item">{{ item }}</option>
-  </select>
-  <br>
-  <label for="student">
-    Student <br>
-  </label>
-    <select name="studentId-field" id="studentId" [formControlName]="'studentId'">
-      <option *ngFor="let item of STUDENTS_LIST" [value]="item.id">
-        {{ item.id }} - {{ item.firstname }} {{ item.lastname }}
-      </option>
-  </select>
-  <br>
-  <button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
+<p>Create new Ticket</p>
+<form class="form" [formGroup]="ticketForm">
+  <mat-form-field class="full-width">
+    <mat-label for="title">Title</mat-label>
+    <input matInput placeholder="" id="title" [formControlName]="'title'">
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <mat-label for="description">Description</mat-label>
+    <input matInput placeholder="" id="description" [formControlName]="'description'">
+  </mat-form-field>
+
+  <!-- <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Student</mat-label>
+    <input type="text"
+            placeholder="Pick one"
+            aria-label="Number"
+            matInput
+            [formControl]="ticketForm"
+            [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of STUDENTS_LIST" [value]="option.id">
+        {{option.firstname}} {{option.lastname}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field> -->
+  
+  <mat-form-field>
+    <mat-label>Student</mat-label>
+    <mat-select [formControlName]="'studentId'">
+      <mat-option *ngFor="let student of STUDENTS_LIST" [value]="student.id">
+        {{student.id}} - {{student.firstname}} {{student.lastname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Major</mat-label>
+    <mat-select [formControlName]="'major'">
+      <mat-option *ngFor="let major of MAJORS_LIST" [value]="major">
+        {{major}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
 </form>
 
 <!-- <br><br>{{ticketForm.getRawValue() | json}} -->

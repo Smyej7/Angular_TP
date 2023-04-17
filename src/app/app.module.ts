@@ -17,7 +17,17 @@ import { StudentFormComponent } from './students/student-form/student-form.compo
 import { StudentSectionComponent } from './students/student-section/student-section.component';
 import { StudentDetailComponent } from './students/student-detail/student-detail.component';
 
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // <-- NgModel lives here
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import { TableBasicComponent } from './table-basic/table-basic.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +41,8 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
     StudentComponent,
     StudentFormComponent,
     StudentSectionComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    TableBasicComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +56,16 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
       InMemoryDataService, { dataEncapsulation: false }
     ),
     AppRoutingModule, 
-    FormsModule
+    FormsModule, 
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatInputModule,
+    
+    MatToolbarModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatCardModule,
+    MatTableModule
   ],
   providers: [
   ],

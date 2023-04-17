@@ -1,0 +1,9 @@
+table {
+  width: 100%;
+}
+
+.rounded-image {
+  height: 60px;
+  width: 60px;
+  border-radius: 500px;
+}

@@ -1,5 +1,5 @@
-<h3>Create a new Student</h3>
-<form class="ticket-form" [formGroup]="studentForm">
+<p>Create new Student</p>
+<!-- <form class="ticket-form" [formGroup]="studentForm">
   <label for="firstname">
     Firstname <br>
     <input class="input-custom" type="text" id="firstname" [formControlName]="'firstname'">
@@ -11,6 +11,19 @@
   </label>
   <br>
   <button type="submit" class="btn-custom" (click)="addStudent()">Create</button>
+</form> -->
+<form class="form" [formGroup]="studentForm">
+  <mat-form-field>
+    <mat-label for="firstname">Firstname</mat-label>
+    <input matInput placeholder="" id="firstname" [formControlName]="'firstname'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label for="lastname">Lastname</mat-label>
+    <input matInput placeholder="" id="lastname" [formControlName]="'lastname'">
+  </mat-form-field>
+  <button mat-raised-button type="submit" class="btn-custom" (click)="addStudent()">Create</button>
 </form>
+
 
 <br><br>{{studentForm.getRawValue() | json}}
