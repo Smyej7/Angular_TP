@@ -1,42 +1,39 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
+import { HttpClient } from '@angular/common/http';
 import { Student } from "src/models/student";
-
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
-  private studentsUrl = 'api/students';
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+  private baseUrl = 'http://localhost:9428/api/students';
 
   constructor(private http: HttpClient) {}
 
-  getStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>(this.studentsUrl);
-  }
-
-  addStudent(student: Student): Observable<Student> {
-    return this.http.post<Student>(this.studentsUrl, student, this.httpOptions);
-  }
-
-  deleteStudent(id: number): Observable<Student> {
-    const url = `${this.studentsUrl}/${id}`;
-    return this.http.delete<Student>(url, this.httpOptions);
+  getStudents(): Observable<any> {
+    return this.http.get(this.baseUrl);
   }
   
-  getStudent(id: number): Observable<Student> {
-    const url = `${this.studentsUrl}/${id}`;
-    return this.http.get<Student>(url);
+  addStudent(student: Student): Observable<any> {
+    return this.http.post<Student>(this.baseUrl, student);
   }
   
+  deleteStudent(id: number): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete(url);
+  }
+
+  getStudent(id: number): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get(url);
+  }
+
   updateStudent(student: Student): Observable<any> {
-    return this.http.put(this.studentsUrl, student, this.httpOptions);
+    const url = `${this.baseUrl}/${student.id}`;
+    return this.http.put(url, student);
   }
+  
 }

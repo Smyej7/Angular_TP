@@ -16,10 +16,11 @@ export class TicketListComponent implements OnInit {
   constructor(public ticketService: TicketService) {}
 
   ngOnInit(): void {
-    this.getTickets();
+    // this.getTickets();
   }
 
   getTickets() {
+    console.log('getTickets called from ticket list');
     this.ticketService.getTickets()
     .subscribe((tickets) => this.ticketList = tickets);
   }

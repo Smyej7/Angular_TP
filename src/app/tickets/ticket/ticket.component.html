@@ -39,6 +39,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="changeArchiveStateTicket()">{{ticket.archived ? 'Unarchive' : 'Archive'}}</button>
+    <button mat-raised-button (click)="changeArchiveStateTicket()">{{ticket.archived ? 'Unarchive' : 'Archive'}}</button>
+    <button mat-raised-button color="warn" (click)="delete()"> Delete </button>
   </mat-card-actions>
 </mat-card>

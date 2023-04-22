@@ -1,8 +1,8 @@
 <div class="container">
   <div class="left-element">
-    <app-ticket-form (ticketHasBeenAdded)="ticketHasBeenAdded()"></app-ticket-form>
+    <app-ticket-form (ticketHasBeenAdded)="refreshTickets()"></app-ticket-form>
   </div>
   <div class="right-element">
-    <app-ticket-list [ticketList]="tickets"></app-ticket-list>
+    <app-ticket-list [ticketList]="tickets" (deleteTicket)="refreshTickets()"></app-ticket-list>
   </div>
 </div>  

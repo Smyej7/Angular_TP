@@ -11,9 +11,10 @@ export class TicketSectionComponent {
 
   tickets: Ticket[];
 
-  constructor(public ticketService: TicketService) {}
+  constructor(public ticketService: TicketService) {this.refreshTickets()}
 
-  ticketHasBeenAdded() {
+  refreshTickets() {
+    console.log('getTickets called from ticket section');
     this.ticketService.getTickets().subscribe((tickets) => this.tickets = tickets);
   }
 }

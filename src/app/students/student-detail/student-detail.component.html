@@ -42,16 +42,31 @@
   <button mat-raised-button type="submit" class="btn-custom" (click)="save()">save</button>
   <button mat-raised-button type="submit" class="btn-custom" (click)="goBack()">go back</button>
 </form> -->
-<form class="form">
+<form [formGroup]="studentForm">
+
   <h2>{{student.firstname}} {{student.lastname}} Details</h2>
 
-  <p>
+  <div class="example-container">
     <mat-form-field appearance="fill">
       <mat-label>Firstname</mat-label>
-      <input matInput placeholder="firstname" [(ngModel)]="student.firstname" >
+      <input matInput placeholder="firstname" [formControlName]="'firstname'" required>
     </mat-form-field>
-  </p>
+  </div>
+  
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Lastname</mat-label>
+      <input matInput placeholder="lastname" [formControlName]="'lastname'" required>
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Notes</mat-label>
+      <textarea matInput placeholder="notes" [formControlName]="'notes'"></textarea>
+    </mat-form-field>
+  </div>
+  
+  <button mat-raised-button class="btn-custom" (click)="save()">save</button>
 
-  <button mat-raised-button type="submit" class="btn-custom" (click)="save()">save</button>
-  <button mat-raised-button type="submit" class="btn-custom" (click)="goBack()">go back</button>
 </form>

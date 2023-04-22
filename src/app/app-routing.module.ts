@@ -5,10 +5,8 @@ import { TicketListComponent } from './tickets';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { StudentSectionComponent } from './students/student-section/student-section.component';
 import { StudentDetailComponent } from './students/student-detail/student-detail.component';
-import { TableBasicComponent } from './table-basic/table-basic.component';
 
 const routes: Routes = [
-  { path: '', component: TableBasicComponent },
   { path: 'manage-tickets', component: TicketSectionComponent },
   // { path: 'list-tickets', component: TicketListComponent },
 

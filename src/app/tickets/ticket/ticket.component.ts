@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Ticket } from '../../../models/ticket';
+import { TicketService } from 'src/services/ticket/ticket.service';
 
 @Component({
   selector: 'app-ticket',
@@ -8,14 +9,20 @@ import { Ticket } from '../../../models/ticket';
 })
 export class TicketComponent {
 
-  /**
-   * Inputs & Output allow communication between parent & child components.
-   * More information: https://angular.io/guide/component-interaction
-   */
   @Input()
   ticket: Ticket;
 
+  @Output()
+  deleteTicket = new EventEmitter();
+
+  constructor(public ticketService: TicketService) {}
+
   changeArchiveStateTicket() {
     this.ticket.archived = !this.ticket.archived;
+    this.ticketService.updateTicket(this.ticket);
+  }
+
+  delete(): void {
+    this.ticketService.deleteTicket(this.ticket.id).subscribe(() => this.deleteTicket.emit());
   }
 }

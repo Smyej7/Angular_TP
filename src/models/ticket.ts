@@ -1,12 +1,12 @@
 import { Student } from "./student";
 
 export interface Ticket {
-  id?: number,
-  title?: string;
+  id: number,
+  title: string;
   description?: string;
-  date?: Date;
+  date: Date;
   student?: Student;
-  major?: Major;
+  major: Major;
   archived: boolean;
 }
 

@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/index';
 
-import { Ticket } from '../../models/ticket';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { mergeMap, filter, toArray } from 'rxjs/operators';
-import { from } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Ticket } from 'src/models/ticket';
 
 
 @Injectable({
@@ -13,26 +10,26 @@ import { from } from 'rxjs';
 })
 export class TicketService {
 
-  private ticketsUrl = 'api/tickets';
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+  private baseUrl = 'http://localhost:9428/api/tickets';
 
   constructor(private http: HttpClient) {}
 
-  getTickets(): Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(this.ticketsUrl);
+  getTickets(): Observable<any> {
+    return this.http.get(this.baseUrl);
+  }
+  
+  addTicket(ticket: Ticket): Observable<any> {
+    return this.http.post(this.baseUrl, ticket);
   }
 
-  /** POST: add a new ticket to the server */
-  addTicket(ticket: Ticket): Observable<Ticket> {
-    return this.http.post<Ticket>(this.ticketsUrl, ticket, this.httpOptions);
+  updateTicket(ticket: Ticket): Observable<any> {
+    const url = `${this.baseUrl}/${ticket.id}`
+    return this.http.put(url, ticket);
   }
-
-  deleteTicket(id: number): Observable<Ticket> {
-    const url = `${this.ticketsUrl}/${id}`;
-    return this.http.delete<Ticket>(url, this.httpOptions);
+  
+  deleteTicket(id: number): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete(url);
   }
   
 }

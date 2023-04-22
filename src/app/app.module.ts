@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from '../services/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { TicketSectionComponent } from './tickets/ticket-section/ticket-section.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
@@ -27,7 +26,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
-import {TableBasicComponent} from './table-basic/table-basic.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material';
 
@@ -43,8 +41,7 @@ import {MatIconModule} from '@angular/material';
     StudentComponent,
     StudentFormComponent,
     StudentSectionComponent,
-    StudentDetailComponent,
-    TableBasicComponent
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +51,6 @@ import {MatIconModule} from '@angular/material';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
     AppRoutingModule, 
     FormsModule, 
     BrowserAnimationsModule,

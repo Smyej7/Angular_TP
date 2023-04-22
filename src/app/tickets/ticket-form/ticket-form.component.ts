@@ -15,12 +15,14 @@ export class TicketFormComponent implements OnInit {
   public ticketForm: FormGroup;
   public MAJORS_LIST = Object.values(Major);
   public STUDENTS_LIST: Student[] = [];
-  public foods = ['pizza', 'kebab']
 
   @Output()
   ticketHasBeenAdded = new EventEmitter();
 
-  constructor(public formBuilder: FormBuilder, public ticketService: TicketService, public studentService: StudentService) {
+  constructor(
+    public formBuilder: FormBuilder, 
+    public ticketService: TicketService, 
+    public studentService: StudentService) {
   }
 
   ngOnInit(): void {
@@ -36,8 +38,6 @@ export class TicketFormComponent implements OnInit {
   addTicket() {
     const ticketToCreate: Ticket = this.ticketForm.getRawValue() as Ticket;
     ticketToCreate.date = new Date();
-    const studentId = this.ticketForm.value.studentId;
-    ticketToCreate.student = this.STUDENTS_LIST.find((s) => s.id == studentId);
     this.ticketService.addTicket(ticketToCreate)
     .subscribe(() => this.ticketHasBeenAdded.emit());
     this.clearForm();
